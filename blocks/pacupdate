@@ -1,4 +1,9 @@
 #!/bin/bash
 
 cupd=$(checkupdates | wc -l)
-echo -e "$cupd "
+if [[ $cupd -eq 0 ]]
+	then
+		echo -e "\x11  No Updates \x0b"
+	else
+		echo -e "\x11  $cupd \x0b"
+fi
