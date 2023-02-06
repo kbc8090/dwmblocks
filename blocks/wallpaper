@@ -1,0 +1,5 @@
+#!/bin/sh
+
+path=$HOME/Downloads/
+image=$(ls $path | grep -E '(jpg|png)$' | sort -R | tail -1)
+xwallpaper --zoom $path/$image

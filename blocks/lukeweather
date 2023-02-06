@@ -13,7 +13,7 @@ getforecast() { curl -sf "wttr.in/Gainesville" > "${XDG_DATA_HOME:-$HOME/.local/
 # display them with coresponding emojis.
 
 RAIN=$(sed '16q;d' "${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" | grep -wo "[0-9]*%" | sort -rn | sed "s/^/☔ /g;1q"| tr -d '\n')
-HIGHLOW=$(sed '13q;d' "${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" | grep -o "m\\([-+]\\)*[0-9]\\+" | sort -n -t 'm' -k 2n | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print " 🥶",$1 "°","🌞",$2 "°"}')
+HIGHLOW=$(sed '13q;d' "${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" | grep -o "m\\([-+]\\)*[0-9]\\+" | sort -n -t 'm' -k 2n | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print "🥶",$1 "°","🌞",$2 "°"}')
 
 #showweather() { printf "%s" "\x0c $(sed '16q;d' "${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" |
 #	grep -wo "[0-9]*%" | sort -rn | sed "s/^/☔ /g;1q" | tr -d '\n')"
