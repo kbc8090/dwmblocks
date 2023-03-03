@@ -3,10 +3,10 @@
 cupd=$(checkupdates | wc -l)
 if [[ $cupd -eq 0 ]]
 then
-	echo -e "\x11  No Updates \x0b"
+  echo -e "\x11  No Updates \x0b"
 elif [[ $cupd -eq 1 ]]
 then
-	echo -e "\x11  $cupd Update \x0b"
+  echo -e "\x11  $cupd Update \x0b"
 else
-	echo -e "\x11  $cupd Updates \x0b"
+  echo -e "\x11  $cupd Updates \x0b"
 fi
